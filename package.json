@@ -1,0 +1,22 @@
+{
+  "name": "@tinypudding/mysql-connector",
+  "version": "1.0.0",
+  "description": "Script to connect to MySQL databases with Google Cloud Proxy support.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TinyPudding/MySQL-Connector.git"
+  },
+  "keywords": [
+    "mysql"
+  ],
+  "author": "Yasmin Seidel (JasminDreasond)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TinyPudding/MySQL-Connector/issues"
+  },
+  "homepage": "https://github.com/TinyPudding/MySQL-Connector#readme"
+}
