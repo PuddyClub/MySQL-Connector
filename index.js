@@ -5,8 +5,8 @@ module.exports = function (mysql, databases, cfg, proxyType = null) {
         // Modules
         const util = require('util');
         const clone = require('clone');
-        const isEmulator = require('../firebase/isEmulator');
-        const objType = require('../get/objType');
+        const isEmulator = require('@tinypudding/puddy-lib/firebase/isEmulator');
+        const objType = require('@tinypudding/puddy-lib/get/objType');
         const _ = require('lodash');
         let db = {};
         let databaseList = [];
