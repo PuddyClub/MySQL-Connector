@@ -59,12 +59,22 @@ module.exports = {
                     // Exist Proxy
                     if (typeof proxyType === "string" && proxyType !== "default") {
 
+                        // Firebase Is Emulator
+                        let firebaseIsEmulator = false;
+                        if (proxyType === "firebase") {
+                            try {
+                                firebaseIsEmulator = require('@tinypudding/firebase-lib/isEmulator')();
+                            } catch (firebaseIsEmulator) {
+                                firebaseIsEmulator = false
+                            }
+                        }
+
                         // Google Cloud
                         if (
 
                             // Validate Type
                             (
-                                (proxyType === "firebase" && !require('@tinypudding/puddy-lib/firebase/isEmulator')()) ||
+                                (proxyType === "firebase" && !firebaseIsEmulator) ||
                                 proxyType === "google_cloud"
                             ) &&
 
