@@ -65,7 +65,7 @@ module.exports = {
                             try {
                                 firebaseIsEmulator = require('@tinypudding/firebase-lib/isEmulator')();
                             } catch (err) {
-                                firebaseIsEmulator = false
+                                firebaseIsEmulator = false;
                             }
                         }
 
