@@ -34,7 +34,7 @@ module.exports = function (mysql, proxyType = null, databases, cfg) {
                 }
 
                 // Exist Proxy
-                if (typeof proxyType === "string") {
+                if (typeof proxyType === "string" && proxyType !== "default") {
 
                     // Google Cloud
                     if (
