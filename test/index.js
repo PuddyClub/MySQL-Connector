@@ -22,3 +22,6 @@ require('../index')(require('mysql'), 'default', require('./data/config.json'))
         return;
 
     });
+
+// Random Interval
+setInterval(function () { }, 1000);
