@@ -1,5 +1,5 @@
 // Modules
-module.exports = function (mysql, databases, cfg, proxyType = null) {
+module.exports = function (mysql, proxyType = null, databases, cfg) {
     return new Promise(function (resolve, reject) {
 
         // Modules
