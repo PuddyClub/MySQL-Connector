@@ -64,7 +64,7 @@ module.exports = {
                         if (proxyType === "firebase") {
                             try {
                                 firebaseIsEmulator = require('@tinypudding/firebase-lib/isEmulator')();
-                            } catch (firebaseIsEmulator) {
+                            } catch (err) {
                                 firebaseIsEmulator = false
                             }
                         }
