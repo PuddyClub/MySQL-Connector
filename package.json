@@ -1,6 +1,6 @@
 {
   "name": "@tinypudding/mysql-connector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Script to connect to MySQL databases with Google Cloud Proxy support.",
   "main": "index.js",
   "scripts": {
