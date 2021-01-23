@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/TinyPudding/MySQL-Connector/issues"
   },
-  "homepage": "https://github.com/TinyPudding/MySQL-Connector#readme"
+  "homepage": "https://github.com/TinyPudding/MySQL-Connector#readme",
+  "dependencies": {
+    "clone": "^2.1.2",
+    "lodash": "^4.17.20",
+    "util": "^0.12.3"
+  }
 }
