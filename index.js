@@ -5,7 +5,6 @@ module.exports = function (mysql, proxyType = null, databases, cfg) {
         // Modules
         const util = require('util');
         const clone = require('clone');
-        const isEmulator = require('@tinypudding/puddy-lib/firebase/isEmulator');
         const objType = require('@tinypudding/puddy-lib/get/objType');
         const _ = require('lodash');
         let db = {};
@@ -34,9 +33,32 @@ module.exports = function (mysql, proxyType = null, databases, cfg) {
                     databaseList[item].data.charset = tinyCfg.charset;
                 }
 
-                // Is Firebase
-                if (typeof proxyType === "string" && ((proxyType === "firebase" && !isEmulator()) || proxyType === "google_cloud")) {
-                    databaseList[item].data.socketPath = databaseList[item].firebase.socketPath;
+                // Exist Proxy
+                if (typeof proxyType === "string") {
+
+                    // Google Cloud
+                    if (
+
+                        // Validate Type
+                        (
+                            (proxyType === "firebase" && !require('@tinypudding/puddy-lib/firebase/isEmulator')()) ||
+                            proxyType === "google_cloud"
+                        ) && 
+                        
+                        // Var
+                        objType(ddatabaseList[item].google_cloud, 'object') &&
+                        typeof databaseList[item].google_cloud.socketPath === "string"
+
+                    ) {
+
+                        // Insert the config
+                        databaseList[item].data.socketPath = databaseList[item].google_cloud.socketPath;
+                    
+                    }
+
+                    // Nothing
+                    else { reject(new Error('Invalid Proxy Type! Index:' + item)); return; }
+
                 }
 
                 // Normal Connection
@@ -68,7 +90,7 @@ module.exports = function (mysql, proxyType = null, databases, cfg) {
             }
 
             // Nope
-            else { reject(new Error('Invalid MySQL Setting!')); return; }
+            else { reject(new Error('Invalid MySQL Setting! Index:' + item)); return; }
 
         }
 

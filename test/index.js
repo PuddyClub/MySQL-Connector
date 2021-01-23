@@ -1,5 +1,5 @@
 // Get MYSQL Database
-require('../index')(require('mysql'), 'default', require('./config.json'))
+require('../index')(require('mysql'), 'default', require('./data/config.json'))
 
     // Success
     .then(db => {
