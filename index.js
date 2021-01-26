@@ -1,6 +1,9 @@
 // Modules
 module.exports = {
 
+    // Next and Prev
+    nextPrev: require('./nextPrev'),
+
     // Pagination
     pagination: require('./pagination'),
 
