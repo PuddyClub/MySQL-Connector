@@ -32,25 +32,25 @@ module.exports = function (mysql, proxyType, databases, cfg) {
                     databaseList[item].data.charset = tinyCfg.charset;
                 }
 
-                // Exist Proxy
-                if (typeof proxyType === "string" && proxyType !== "default") {
-
-                    // Firebase Is Emulator
-                    let firebaseIsEmulator = false;
-                    if (proxyType === "firebase") {
-                        try {
-                            firebaseIsEmulator = require('@tinypudding/firebase-lib/isEmulator')();
-                        } catch (err) {
-                            firebaseIsEmulator = false;
-                        }
+                // Firebase Is Emulator
+                let firebaseIsEmulator = false;
+                if (proxyType === "firebase") {
+                    try {
+                        firebaseIsEmulator = require('@tinypudding/firebase-lib/isEmulator')();
+                    } catch (err) {
+                        firebaseIsEmulator = false;
                     }
+                }
+
+                // Exist Proxy
+                if (!firebaseIsEmulator && typeof proxyType === "string" && proxyType !== "default") {
 
                     // Google Cloud
                     if (
 
                         // Validate Type
                         (
-                            (proxyType === "firebase" && !firebaseIsEmulator) ||
+                            proxyType === "firebase" ||
                             proxyType === "google_cloud"
                         ) &&
 
