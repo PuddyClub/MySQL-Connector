@@ -57,6 +57,19 @@ mysql('server-database-name').then(async db => {
     console.error(err);
 });
 
+// Start the MySQL Connection with multiple databases
+mysql(['server-database-name-1', 'server-database-name-2']).then(dbs => {
+
+    // Get Database 1
+    const db = dbs['server-database-name-1'];
+
+    // Complete
+    return;      
+
+}).catch(err => {
+    console.error(err);
+});
+
 ```
 
 ### connect.js (Module)
