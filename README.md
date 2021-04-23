@@ -86,6 +86,7 @@ module.exports = function (database = 'main', insertSSL = true) {
         if (typeof database === "string") {
 
             // Get MySQL Connection
+            // If you want to use only the normal connection. Change the "firebase" option to "default".
             mysql(require('mysql'), 'firebase', getMySQL(database, insertSSL)).then(resolve).catch(reject);
 
         }
