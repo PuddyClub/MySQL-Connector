@@ -15,6 +15,49 @@ Script to connect to MySQL databases with Google Cloud Proxy support.
 
 ## Example
 
+### index.js (Server File)
+This is the final result inside your server's file.
+```js
+
+// Get Module
+const mysql = require('./connect');
+
+// Start the MySQL Connection
+mysql('server-database-name').then(async db => {
+
+    // Print
+    db.query('SELECT * FROM test')
+
+        // Success
+        .then(data => {
+
+            // Print
+            console.log(data);
+
+            // Complete
+            return;
+
+        })
+
+        // Fail
+        .catch(err => {
+
+            // Print
+            console.error(err);
+
+            // Complete
+            return;
+
+        });
+
+    // Complete
+    return;      
+
+}).catch(err => {
+    console.error(err);
+});
+
+```
 
 ### connect.js (Module)
 You will use this module to create a totally easy to use method to create a connection to your database. You just need to insert your database name into the method. Totally simple and easy!
