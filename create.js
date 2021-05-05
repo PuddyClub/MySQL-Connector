@@ -55,7 +55,7 @@ module.exports = function (mysql, proxyType, databases, cfg) {
                         ) &&
 
                         // Var
-                        objType(ddatabaseList[item].google_cloud, 'object') &&
+                        objType(databaseList[item].google_cloud, 'object') &&
                         typeof databaseList[item].google_cloud.socketPath === "string"
 
                     ) {
