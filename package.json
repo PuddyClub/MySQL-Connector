@@ -1,6 +1,6 @@
 {
   "name": "@tinypudding/mysql-connector",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Script to connect to MySQL databases with Google Cloud Proxy support.",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/TinyPudding/MySQL-Connector#readme",
   "dependencies": {
-    "@tinypudding/puddy-lib": "^1.0.16",
+    "@tinypudding/puddy-lib": "^1.1.29",
     "clone": "^2.1.2",
     "lodash": "^4.17.21",
     "util": "^0.12.3"
