@@ -109,13 +109,12 @@ module.exports = function (mysql, proxyType, databases, cfg) {
         }
 
         // Fix
-        const dbKets = Object.keys(databases);
-        if (dbKets.length < 2) {
-            db = db[dbKets[0]];
-        }
+        const dbKets = Object.keys(databaseList);
 
         // Complete
-        resolve(db);
+        if (dbKets.length < 2) {
+            resolve(db[databaseList[0].data.database]);
+        } else { resolve(db); }
         return;
 
     });
