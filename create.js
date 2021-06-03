@@ -28,7 +28,7 @@ module.exports = function (mysql, proxyType, databases, cfg) {
         for (const item in databaseList) {
 
             // Exist
-            if (objType(databaseList[item], 'object') && objType(databaseList[item].data, 'object') && typeof databaseList[item].data.database === "string") {
+            if (objType(databaseList[item], 'object') && objType(databaseList[item].data, 'object')) {
                 if (!db[databaseList[item].data.database]) {
 
                     // Charset
